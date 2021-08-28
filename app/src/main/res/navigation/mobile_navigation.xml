@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="uz.projects.wallpaper.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_likedFragment"
+            app:destination="@id/nav_liked" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_random"
+            app:destination="@id/nav_random" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_liked"
+            app:destination="@id/nav_liked" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_popular"
+            app:destination="@id/nav_popular" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_random"
+        android:name="uz.projects.wallpaper.ui.random.RandomFragment"
+        android:label="Random"
+        tools:layout="@layout/fragment_random">
+        <action
+            android:id="@+id/action_nav_random_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="uz.projects.wallpaper.ui.home.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank">
+        <action
+            android:id="@+id/action_blankFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="uz.projects.wallpaper.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/action_imageFragment_to_setWallpaperFragment"
+            app:destination="@id/setWallpaperFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_liked"
+        android:name="uz.projects.wallpaper.ui.LikedFragment"
+        android:label="My favorites☻"
+        tools:layout="@layout/fragment_liked">
+        <action
+            android:id="@+id/action_likedFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="uz.projects.wallpaper.ui.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="uz.projects.wallpaper.ui.HistoryFragment"
+        android:label="History" />
+    <fragment
+        android:id="@+id/nav_popular"
+        android:name="uz.projects.wallpaper.PopularFragment"
+        android:label="Popular">
+        <action
+            android:id="@+id/action_nav_popular_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setWallpaperFragment"
+        android:name="uz.projects.wallpaper.SetWallpaperFragment"
+        android:label="SetWallpaperFragment" />
+</navigation>
